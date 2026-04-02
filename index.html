@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Define o padrão de codificação de caracteres -->
+    <meta charset="UTF-8" />
+
+    <!-- Compatibilidade com navegadores antigos (principalmente Internet Explorer) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Permite que o site seja responsivo em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Mundo Invertido | Semana Front-end</title>
+
+    <!-- Arquivo CSS principal da aplicação -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <!-- 
+    Classe inicial do tema do site.
+    "light-theme" representa o mundo normal.
+    O atributo aria-label melhora acessibilidade para leitores de tela.
+  -->
+  <body class="light-theme" aria-label="O site está utilizando o tema light" role="body">
+
+    <!-- =========================
+         Cabeçalho da página
+         ========================= -->
+    <header aria-label="Cabeçalho da página.">
+
+      <!-- 
+        Áudio de fundo do site.
+        Toca automaticamente quando o usuário interage com a página.
+      -->
+      <audio id="music" autoplay>
+        <source src="assets/musics/normal-world.mpeg" aria-details="Audio do site" />
+      </audio>
+
+      <!-- Conteúdo principal do cabeçalho -->
+      <div class="header-content">
+
+        <!-- Logo do projeto -->
+        <img
+          class="invert-element"
+          src="assets/images/banner/logo.svg"
+          alt="Imagem principal Mundo Invertido. Semana Frontend DIO."
+        />
+
+        <!-- Texto introdutório da página -->
+        <p class="invert-element" role="text">
+          Uma jornada para quem não tem medo do desconhecido. O caminho para o
+          Mundo invertido é incerto, repleto de obstáculos e perigos. Porém, a
+          recompensa é grande: salvar Hawkings e o mundo todo das garras de
+          Vecna. Você está preparado? Então clique no botão abaixo para entrar
+          no Mundo Invertido!
+        </p>
+
+        <!-- Botão responsável por alternar entre os temas do site -->
+        <button id="switch-theme-button" onclick="switchTheme()">
+          Inverter Mundos
+        </button>
+      </div>
+
+      <!-- Elementos visuais decorativos (personagens do mundo) -->
+      <div id="top-characters" class="world-characters"></div>
+    </header>
+
+    <!-- =========================
+         Conteúdo principal
+         ========================= -->
+    <main>
+
+      <!-- Personagens decorativos na parte inferior -->
+      <div id="bottom-characters" class="world-characters"></div>
+
+      <!-- =========================
+           Seção Mundo Invertido
+           ========================= -->
+      <section id="section-inverted-world" class="container">
+
+        <!-- Texto descritivo da seção -->
+        <div class="section-texts">
+          <h1>O Mundo Invertido</h1>
+
+          <p role="text">
+            O Mundo Invertido parece uma cópia do nosso mundo, mas com criaturas
+            horrendas, tempestades assustadoras, muita escuridão e entidades
+            malignas. Um reino controlado por Vecna, que tem planos de trazer
+            tudo isso ao nosso mundo.
+          </p>
+        </div>
+
+        <!-- Imagem ilustrativa -->
+        <img
+          class="invert-element"
+          src="assets/images/content/inverted-world.png"
+          alt="Image ilustrativa do Mundo Invertido"
+        />
+      </section>
+
+
+      <!-- =========================
+           Seção Trailer
+           ========================= -->
+      <section id="section-stranger-things-trailer" class="container">
+
+        <!-- Frame do vídeo -->
+        <div class="video-frame" aria-hidden="true">
+
+          <!-- Trailer incorporado do YouTube -->
+          <iframe
+            width="460"
+            height="215"
+            src="https://www.youtube.com/embed/PssKpzB0Ah0?si=vcD6VHnGboXuackj"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+        <!-- Texto descritivo da seção -->
+        <div class="section-texts">
+          <h2>Stranger Things Vol. 5</h2>
+
+          <p role="text">
+            A 5ª temporada de Stranger Things narra a batalha final em Hawkins (1987), com a cidade em quarentena após Vecna fundir o Mundo Invertido ao real. Will Byers, infectado desde 1983, atua como radar contra Vecna, que busca novas crianças. 
+          </p>
+        </div>
+      </section>
+
+
+      <!-- =========================
+           Galeria de imagens
+           ========================= -->
+      <section id="section-stranger-things-gallery">
+
+        <div class="container section-text">
+
+          <h2>A segunda série mais assistida da Netflix</h2>
+
+          <!-- Lista de imagens da galeria -->
+          <ul class="gallery-container" role="gallery">
+
+            <li class="gallery-image invert-element">
+              <img src="assets/images/content/serie-image-01.png" alt="Imagem de Vecna" />
+            </li>
+
+            <li class="gallery-image invert-element">
+              <img src="assets/images/content/serie-image-02.png" alt="Imagem ilustrativa dos amigos de Eleven" />
+            </li>
+
+            <li class="gallery-image invert-element">
+              <img src="assets/images/content/serie-image-03.png" alt="Imagem Eleven assustada" />
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- =========================
+           Formulário de inscrição
+           ========================= -->
+      <section id="section-form" class="container">
+
+        <h2>O Clube Dungeons & Dragons</h2>
+
+        <!-- Texto explicativo -->
+        <p>
+          Para deter Vecna, os heróis de Stranger Things também precisam de
+          você. O Clube de D&D mais famoso de Hawkings está com vagas abertas
+          para sua próxima aventura.
+        </p>
+
+        <div class="form-content">
+
+          <h3>
+            Entre para o clube de D&D e tenha experiências de 
+            <span>outro mundo</span>
+          </h3>
+
+          <!-- Container do formulário -->
+          <div class="form-container">
+
+            <form>
+
+              <!-- Campo nome -->
+              <label for="name">Nome Completo</label>
+              <input type="text" name="name" id="txtName">
+
+              <!-- Campo email -->
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="txtEmail">
+
+              <!-- Campo nível do jogador -->
+              <label for="level">Level</label>
+              <input type="number" name="level" id="txtLevel">
+
+              <!-- Campo personagem -->
+              <label for="character">Personagem</label>
+              <textarea name="character" cols="30" rows="10" id="txtCharacter"></textarea>
+
+              <!-- Botão de envio -->
+              <button type="button" id="btnSubscribe">
+                Me inscrever
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- =========================
+         Rodapé
+         ========================= -->
+    <footer>
+
+      <p>
+        Projeto construído para fins didáticos, com o objetivo de colocar em
+        prática os conhecimentos de HTML, CSS e JavaScript aprendidos na DIO.
+      </p>
+
+      <!-- Logo da DIO -->
+      <img src="assets/images/footer/logo.svg" alt="">
+
+    </footer>
+
+    <!-- Script principal do projeto -->
+    <script src="./assets/js/main.js" type="module"></script>
+
+    <!-- Script da música de fundo e mudar o tema -->
+    <script src="./assets/js/music.js"></script>
+
+  </body>
+</html>
